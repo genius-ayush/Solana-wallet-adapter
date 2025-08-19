@@ -2,37 +2,22 @@
 import {
   Navbar,
   NavBody,
-  NavItems,
   MobileNav,
   NavbarLogo,
-  NavbarButton,
   MobileNavHeader,
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
-import { useMemo, useState } from "react";
+import {  useState } from "react";
 import { ModeToggle } from "./ui/mode-toggle";
-import { Button } from "./ui/button";
-import { useWalletModal } from "@solana/wallet-adapter-react-ui";
-import { useWallet } from "@solana/wallet-adapter-react";
-import { Wallet, LogOut } from "lucide-react"; // icons
 import { WalletButton } from "./WalletButton";
 
-function shortenAddress(addr: string, chars = 4) {
-  if (!addr) return "";
-  return `${addr.slice(0, chars)}…${addr.slice(-chars)}`;
-}
+
 
 export function Header() {
-  const { connected, disconnect , publicKey} = useWallet();
-  const { setVisible } = useWalletModal();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const short = useMemo(
-    () => (publicKey ? shortenAddress(publicKey.toBase58(), 4) : ""),
-    [publicKey]
-  );
-
+  
 
   return (
       <Navbar className="">
