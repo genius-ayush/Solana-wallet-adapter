@@ -11,6 +11,7 @@ import {
 import {  useState } from "react";
 import { ModeToggle } from "./ui/mode-toggle";
 import { WalletButton } from "./WalletButton";
+import ShowBalance from "./ShowBalance";
 
 
 
@@ -28,7 +29,7 @@ export function Header() {
           <div className="flex items-center gap-4 relative z-50">
 
             <ModeToggle/>
-            
+            <ShowBalance/>
             <WalletButton/>
             
           </div>
