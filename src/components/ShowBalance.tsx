@@ -25,7 +25,7 @@ function ShowBalance() {
     } , [wallet.publicKey])
     
   return (
-    <Button>{balance !== null ? balance : "No balance yet"} Sol</Button >
+    <Button>{balance !== null ? balance : "No balance yet"} SOL</Button >
   )
 }
 
